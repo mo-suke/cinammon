@@ -11,7 +11,16 @@ RUN apt-get update -qq && \
                        patch \
                        ruby-dev \
                        liblzma-dev \
-                       nodejs
+                       nodejs \
+                       npm
+
+# yarnを削除
+RUN apt remove cmdtest yarn
+
+# yarnのパッケージ情報を更新&インストール
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update -qq && apt-get install yarn
 
 # bundlerをインストール
 RUN gem install bundler
@@ -25,11 +34,14 @@ WORKDIR /apps
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 
-# Gemfileを送る
+# yarn install
+COPY package.json /apps/package.json
+RUN yarn
+
+# bundle install
 COPY Gemfile /apps/Gemfile
 COPY Gemfile.lock /apps/Gemfile.lock
 
-# bundle install
 RUN bundle install
 
 # container起動時にentrypoint.shを走らせる
