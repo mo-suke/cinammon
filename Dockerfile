@@ -14,6 +14,9 @@ RUN apt-get update -qq && \
                        nodejs \
                        npm
 
+# Rubyの言語設定をutf-8に変更
+RUN export RUBYOPT=-EUTF-8
+
 # yarnを削除
 RUN apt remove cmdtest yarn
 
@@ -49,9 +52,6 @@ ENTRYPOINT ["entrypoint.sh"]
 
 # port 3000を公開
 EXPOSE 3000
-
-# 言語設定をUTF-8に変更
-ENV LANG C.UTF-8
 
 # 全てのファイルをimageに突っ込む
 COPY . /apps

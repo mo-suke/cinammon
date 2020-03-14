@@ -1,0 +1,123 @@
+/*ページサイズの設定*/
+@page {
+  width: 210mm;
+  height: 297mm;
+  margin: 0
+}
+
+/*chromeの縮小バグ回避*/
+@media print {
+  body {
+    width: 210mm;
+    height: 297mm;
+  }
+}
+
+/*テキストボックス*/
+.text_box {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+/*テキストボックス内のテキストを，テキストボックス内に配置*/
+.text_center {
+  text-align: center;
+}
+
+/*テキストボックスの中にいれる文字*/
+.in_box_text_10pt {
+  margin: 0;
+  padding: 0;
+  font-size: 10pt;
+  line-height: 11pt;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.in_box_text_9pt {
+  margin: 0;
+  padding: 0;
+  font-size:10pt;
+  line-height: 11pt;
+  font-family: 'Noto Sans JP', sans-serif;
+  -webkit-transform:scale(0.9);
+  -moz-transform:scale(0.9);
+  -ms-transform:scale(0.9);
+  -o-transform:scale(0.9);
+  transform:scale(0.9);
+  width: 111%;
+  transform-origin: left top;
+}
+.in_box_text_8pt {
+  margin: 0;
+  padding: 0;
+  font-size:10pt;
+  line-height: 11pt;
+  font-family: 'Noto Sans JP', sans-serif;
+  -webkit-transform:scale(0.8);
+  -moz-transform:scale(0.8);
+  -ms-transform:scale(0.8);
+  -o-transform:scale(0.8);
+  transform:scale(0.8);
+  width: 125%;
+  transform-origin: left top;
+}
+.in_box_text_7pt {
+  margin: 0;
+  padding: 0;
+  font-size:10pt;
+  line-height: 11pt;
+  font-family: 'Noto Sans JP', sans-serif;
+  -webkit-transform:scale(0.7);
+  -moz-transform:scale(0.7);
+  -ms-transform:scale(0.7);
+  -o-transform:scale(0.7);
+  transform:scale(0.7);
+  width: 142%;
+  transform-origin: left top;
+}
+.in_box_text_6pt {
+  margin: 0;
+  padding: 0;
+  font-size:10pt;
+  line-height: 11pt;
+  font-family: 'Noto Sans JP', sans-serif;
+  -webkit-transform:scale(0.6);
+  -moz-transform:scale(0.6);
+  -ms-transform:scale(0.6);
+  -o-transform:scale(0.6);
+  transform:scale(0.6);
+  width: 166%;
+  transform-origin: left top;
+}
+.in_box_text_5pt {
+  margin: 0;
+  padding: 0;
+  font-size:10pt;
+  line-height: 11pt;
+  font-family: 'Noto Sans JP', sans-serif;
+  -webkit-transform:scale(0.5);
+  -moz-transform:scale(0.5);
+  -ms-transform:scale(0.5);
+  -o-transform:scale(0.5);
+  transform:scale(0.5);
+  width: 200%;
+  transform-origin: left top;
+}
+
+/*テキストボックス内のテキストにパディングを設定する*/
+.in_box_text_padding_1mm {
+  padding: 1mm;
+}
+
+/*印刷時には非表示になる要素*/
+@media screen {
+  .text_box {
+    border: black solid 1px;
+  }
+}
+@media print {
+  .print_hide {
+    display: none;
+  }
+}
