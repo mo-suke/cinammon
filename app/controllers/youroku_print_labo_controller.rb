@@ -1,6 +1,6 @@
 class YourokuPrintLaboController < ApplicationController
   layout 'youroku_print_labo'
 
-  def normal_omote_new
+  def index
   end
 end
