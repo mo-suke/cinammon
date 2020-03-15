@@ -37,10 +37,6 @@ WORKDIR /apps
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 
-# yarn install
-COPY package.json /apps/package.json
-RUN yarn
-
 # bundle install
 COPY Gemfile /apps/Gemfile
 COPY Gemfile.lock /apps/Gemfile.lock
