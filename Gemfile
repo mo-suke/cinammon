@@ -29,9 +29,6 @@ gem 'jbuilder', '~> 2.7'
 gem 'slim-rails'
 gem 'html2slim'
 
-# Use CSSframework Bootstrap
-gem 'bootstrap'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
