@@ -1,0 +1,2 @@
+module PrintLaboHelper
+end

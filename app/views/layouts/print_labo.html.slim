@@ -1,0 +1,10 @@
+doctype html
+html lang="ja"
+  head
+    title
+      | 印刷研究所
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'print_labo', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'print_labo', 'data-turbolinks-track': 'reload'
+  = yield

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'print_labo/index'
   get '/' => 'dashboard#index'
 
   get 'dashboard/index'
