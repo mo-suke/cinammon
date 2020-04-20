@@ -1,0 +1,15 @@
+h1 児童詳細
+
+.container.text-right
+  = link_to '児童一覧へ戻る', students_path
+  
+.card
+  .card-body
+    h2 = "#{@student.grade}年 #{@student.school_class}年 #{@student.class_number}番"
+    h1 = "#{@student.last_name} #{@student.first_name}"
+    
+    .text-right
+      button.btn.btn-success.btn-raised
+        = link_to '編集', [:edit, @student], class: "text-light"
+      button.btn.btn-danger.btn-raised.ml-1
+        = link_to '削除', @student, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "text-light"

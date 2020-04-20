@@ -1,15 +1,19 @@
-table
+h1 児童一覧
+
+.text-right
+  button.btn.btn-primary.btn-raised 新しい児童を登録
+
+table.table.table-striped
   thead
     tr
-      th 学年
-      th クラス
-      th 番号
-      th 名前
+      th[scope="col"] 年・組・番号
+      th[scope="col"] 名前
+      th[scope="col"] 編集
+      th[scope="col"] 削除
   tbody
     - @students.each do |student|
       tr
-        td = student.grade
-        td = student.school_class
-        td = student.class_number
-        td = "#{student.last_name} #{student.first_name}"
-        
+        th[scope="row"] = "#{student.grade}年 #{student.school_class}組 #{student.class_number}番"
+        td = link_to "#{student.last_name} #{student.first_name}", student
+        td = link_to '編集', [:edit, student], class: "text-success"
+        td = link_to '削除', student, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "text-danger"
