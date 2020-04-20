@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get 'print_labo/index'
   get '/' => 'dashboard#index'
 
-  resources :students
+  resources :students do
+    get 'search', on: :collection
+  end
 
   get 'dashboard/index'
   get 'laboratory/bootstrap'

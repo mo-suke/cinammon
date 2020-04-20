@@ -1,5 +1,8 @@
 h1 児童の登録
 
+.container.text-right
+  = link_to '児童一覧へ戻る', students_path
+  
 .card
   .card-body
     = form_for @student do |f|

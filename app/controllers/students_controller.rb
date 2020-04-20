@@ -23,4 +23,9 @@ class StudentsController < ApplicationController
 
   def destroy
   end
+
+  def search
+    @students = Student.search(params[:q])
+    render "index"
+  end
 end

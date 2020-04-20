@@ -9,7 +9,7 @@ h1 児童詳細
     h1 = "#{@student.last_name} #{@student.first_name}"
     
     .text-right
-      button.btn.btn-success.btn-raised
-        = link_to '編集', [:edit, @student], class: "text-light"
-      button.btn.btn-danger.btn-raised.ml-1
-        = link_to '削除', @student, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "text-light"
+      = link_to [:edit, @student] do
+        button.btn.btn-success.btn-raised 編集
+      = link_to @student, method: :delete, data: {confirm: "本当に削除しますか？"} do
+        button.btn.btn-danger.btn-raised.ml-1 削除

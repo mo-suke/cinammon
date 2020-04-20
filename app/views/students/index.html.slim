@@ -1,19 +1,29 @@
 h1 児童一覧
 
-.text-right
-  button.btn.btn-primary.btn-raised 新しい児童を登録
+= form_tag :search_students, method: :get, class:"search" do
+  .row
+    .col = text_field_tag "q", params[:q], class: "form-control", placeholder: "児童を検索"
+    .col-3 = submit_tag "検索", class:"form-control btn btn-secondary btn-raised"
 
-table.table.table-striped
-  thead
+.text-right
+  = link_to new_student_url do
+    button.btn.btn-primary.btn-raised 新規登録
+
+table.table.table-striped.table-sm
+  thead.text-center
     tr
       th[scope="col"] 年・組・番号
       th[scope="col"] 名前
       th[scope="col"] 編集
       th[scope="col"] 削除
-  tbody
+  tbody.text-center
     - @students.each do |student|
       tr
-        th[scope="row"] = "#{student.grade}年 #{student.school_class}組 #{student.class_number}番"
-        td = link_to "#{student.last_name} #{student.first_name}", student
-        td = link_to '編集', [:edit, student], class: "text-success"
-        td = link_to '削除', student, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "text-danger"
+        th[scope="row"] = link_to student do
+          button.btn.btn-dark = "#{student.grade}年 #{student.school_class}組 #{student.class_number}番"
+        td = link_to student do
+          button.btn.btn-primary = "#{student.last_name} #{student.first_name}"
+        td = link_to [:edit, student] do
+          button.btn.btn-success 編集
+        td = link_to student, method: :delete, data: {confirm: "本当に削除しますか？"} do
+          button.btn.btn-danger 削除
