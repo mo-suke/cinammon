@@ -12,8 +12,7 @@ html lang="ja"
       = link_to 'Cinnamon', '/' , class: 'navbar-brand'
       
     - if flash.notice
-      .alert.alert-success
-        .container = flash.notice
+      .container = flash.notice
     
     .container.mt-3
       = yield
