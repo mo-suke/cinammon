@@ -35,6 +35,9 @@ class StudentsController < ApplicationController
   end
 
   def destroy
+    @student = Student.find(params[:id])
+    @student.destroy
+    redirect_to :students, notice: "児童を削除しました"
   end
 
   def search
