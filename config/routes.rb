@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :students do
     get 'search', on: :collection
+    get 'group', on: :collection
   end
 
   get 'dashboard/index'

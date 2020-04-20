@@ -42,7 +42,11 @@ class StudentsController < ApplicationController
 
   def search
     @students = Student.search(params[:q])
-    @students.order(:grade).order(:school_class).order(:class_number)
+    render "index"
+  end
+
+  def group
+    @students = Student.grouping(params[:grade], params[:school_class])
     render "index"
   end
 end
