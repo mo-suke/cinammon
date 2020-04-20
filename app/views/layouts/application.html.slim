@@ -9,7 +9,6 @@ html lang="ja"
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
     .app-title.navbar.navbar-expand-md.navbar-light.bg-light
-      .navbar-brand
-        | Cinnamon
+      = link_to 'Cinnamon', '/' , class: 'navbar-brand'
     .container
       = yield
