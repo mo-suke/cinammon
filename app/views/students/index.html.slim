@@ -5,10 +5,11 @@ table
       th クラス
       th 番号
       th 名前
-  
   tbody
-    tr
-      td 1
-      td 1
-      td 1
-      td 花子
+    - @students.each do |student|
+      tr
+        td = student.grade
+        td = student.school_class
+        td = student.class_number
+        td = "#{student.last_name} #{student.first_name}"
+        
