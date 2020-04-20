@@ -1,13 +1,14 @@
-h1 児童一覧
-
+.d-flex.align-items-end
+  .mr-auto
+    h1 児童一覧
+  div
+    = link_to new_student_url do
+      button.btn.btn-primary.btn-raised 新規登録
+      
 = form_tag :search_students, method: :get, class:"search" do
-  .row
+  .row.mt-5
     .col = text_field_tag "q", params[:q], class: "form-control", placeholder: "児童を検索"
     .col-3 = submit_tag "検索", class:"form-control btn btn-secondary btn-raised"
-
-.text-right
-  = link_to new_student_url do
-    button.btn.btn-primary.btn-raised 新規登録
 
 table.table.table-striped.table-sm
   thead.text-center
