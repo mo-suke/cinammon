@@ -1,11 +1,22 @@
 .d-flex.align-items-end
-  h1 児童一覧
   .mr-auto
-    = link_to students_path(format: :csv) do
-      button.btn.btn-primary CSVでエクスポート
+    h1 児童一覧
   div
     = link_to new_student_url do
       button.btn.btn-primary.btn-raised 新規登録
+      
+.row
+  .col-8
+      = form_tag import_students_path, multipart: true do
+        .row
+          .col
+            = file_field_tag :file, class:"form-control-file"
+          .col
+            = submit_tag "インポート", class:"form-control btn btn-light text-dark btn-raised"
+  .col
+    = link_to students_path(format: :csv) do
+      button.btn.btn-primary CSVをエクスポート
+
 = form_tag :search_students, method: :get, class:"search" do
   .row.mt-5
     .col = text_field_tag "q", params[:q], class: "form-control", placeholder: "児童を検索"

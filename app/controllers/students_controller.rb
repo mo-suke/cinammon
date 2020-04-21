@@ -54,4 +54,10 @@ class StudentsController < ApplicationController
     @students = Student.grouping(params[:grade], params[:school_class])
     render "index"
   end
+
+  # csvからのインポート
+  def import
+    Student.import(params[:file])
+    redirect_to students_url
+  end
 end

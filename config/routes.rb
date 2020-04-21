@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :students do
     get 'search', on: :collection
     get 'group', on: :collection
+    collection { post :import }
   end
 
   get 'dashboard/index'
