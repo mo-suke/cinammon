@@ -1,6 +1,11 @@
 class StudentsController < ApplicationController
   def index
     @students = Student.order(:grade, :school_class, :class_number)
+
+    respond_to do |format|
+      format.html
+      format.csv {send_data @students.generate_csv, filename: "students_#{Time.zone.now.strftime('%Y%m%d%S')}.csv"}
+    end
   end
 
   def show

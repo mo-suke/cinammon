@@ -32,7 +32,11 @@ gem 'html2slim'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+# 国際化
 gem 'rails-i18n'
+
+# csvやexcelを開けるようになる
+gem 'roo'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
