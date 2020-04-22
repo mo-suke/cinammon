@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get 'dashboard/index'
   get 'laboratory/bootstrap'
   get 'laboratory/print'
-  get 'youroku_print_labo/index'
+
+  get 'youroku_print_labo/show/:grade/:status' => 'youroku_print_labo#show'
 end
