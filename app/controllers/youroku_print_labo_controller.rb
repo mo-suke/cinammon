@@ -1,6 +1,9 @@
 class YourokuPrintLaboController < ApplicationController
   layout 'youroku_print_labo'
 
+  def index
+  end
+
   def show
     @grade = params[:grade].to_i
     @status = params[:status].to_i
