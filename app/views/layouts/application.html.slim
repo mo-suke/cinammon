@@ -11,6 +11,9 @@ html lang="ja"
     .app-title.navbar.navbar-expand-md.navbar-light.bg-light
       = link_to 'Cinnamon', '/' , class: 'navbar-brand'
       
+      ul.navbar-nav.mr-auto
+        li.nav-link = link_to '要録を印刷', '/youroku_print_labo/show/1/1/1/hide'
+      
     - if flash.notice
       .alert.alert-primary
         .container = flash.notice

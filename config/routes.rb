@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'print_labo/index'
-  get '/' => 'dashboard#index'
+  get '/' => 'students#index'
 
   resources :students do
     get 'search', on: :collection
