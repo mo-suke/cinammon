@@ -15,6 +15,8 @@ module ApplicationHelper
       "B"
     when 1
       "C"
+    when 0
+      ""
     end
   end
 
