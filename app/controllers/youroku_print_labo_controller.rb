@@ -9,6 +9,8 @@ class YourokuPrintLaboController < ApplicationController
     @status = params[:status].to_i
     @print_status = params[:print_status]
 
+    @students = Student.grouping(params[:grade], params[:school_class])
+
     @text = <<~TEXT
       親譲りの無鉄砲で小供の時から損ばかりしている。
       小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。

@@ -1,13 +1,14 @@
 = render 'select_box'
 
-- case @status
-- when 1
-  = render 'normal_omote'
-- when 2
-  = render 'normal_ura'
-- when 3
-  = render 'jijo_omote'
-- when 4
-  = render 'jijo_ura'
-- else
-  h1 書式がありません
+- @students.each do |student|
+  - case @status
+  - when 1
+    = render 'normal_omote', student: student
+  - when 2
+    = render 'normal_ura', student: student
+  - when 3
+    = render 'jijo_omote', student: student
+  - when 4
+    = render 'jijo_ura', student: student
+  - else
+    h1 書式がありません
