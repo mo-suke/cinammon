@@ -17,4 +17,12 @@ module ApplicationHelper
       "C"
     end
   end
+
+  def print_hide?(print_status)
+    print_status == "hide" ? "print_hide" : ""
+  end
+
+  def print_display_border?(print_status)
+    print_status == "display" ? "print_display_border" : ""
+  end
 end

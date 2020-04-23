@@ -1,18 +1,3 @@
-/*ページサイズの設定*/
-@page {
-  width: 210mm;
-  height: 297mm;
-  margin: 0
-}
-
-/*chromeの縮小バグ回避*/
-@media print {
-  body {
-    width: 210mm;
-    height: 297mm;
-  }
-}
-
 /*テキストボックス*/
 .text_box {
   margin: 0;
@@ -119,5 +104,8 @@
 @media print {
   .print_hide {
     display: none;
+  }
+  .print_display_border {
+    border: black solid 1px;
   }
 }

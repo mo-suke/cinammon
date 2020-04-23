@@ -7,6 +7,7 @@ class YourokuPrintLaboController < ApplicationController
   def show
     @grade = params[:grade].to_i
     @status = params[:status].to_i
+    @print_status = params[:print_status]
 
     @text = <<~TEXT
       親譲りの無鉄砲で小供の時から損ばかりしている。
