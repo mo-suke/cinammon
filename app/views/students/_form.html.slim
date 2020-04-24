@@ -33,123 +33,193 @@
     h4 要録（表）の入力
   .card-body
     h5 各教科の学習の記録
+    
+    table.table.table-sm
+      thead
+        tr
+          th
+          th = f.label '国語'
+          th = f.label '社会'
+          th = f.label '算数'
+          th = f.label '理科'
+          th = f.label '生活'
+          th = f.label '音楽'
+          th = f.label '図工'
+          th = f.label '家庭'
+          th = f.label '体育'
+          th = f.label '英語'
+      tbody
+        tr
+          th = f.label '知識・技能'
+          td = f.select :kyouka_kokugo_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_sansu_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_syakai_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_rika_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_seikatu_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_ongaku_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_zukou_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_katei_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_taiiku_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_gaikokugo_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+        tr
+          th = f.label '思考・判断・表現'
+          td = f.select :kyouka_kokugo_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_sansu_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_syakai_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_rika_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_seikatu_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_ongaku_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_zukou_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_katei_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_taiiku_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_gaikokugo_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+        tr
+          th = f.label '主体的に取り組む態度'
+          td = f.select :kyouka_kokugo_syutai, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_sansu_syutai, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_syakai_syutai, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_rika_syutai, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_seikatu_syutai, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_ongaku_syutai, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_zukou_syutai, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_katei_syutai, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_taiiku_syutai, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+          td = f.select :kyouka_gaikokugo_syutai, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+        tr
+          th = f.label '評定'
+          td = f.select :kyouka_kokugo_hyouka, [["3", 3], ["2", 2], ["1", 1]], {}, class: "form-control"
+          td = f.select :kyouka_sansu_hyouka, [["3", 3], ["2", 2], ["1", 1]], {}, class: "form-control"
+          td = f.select :kyouka_syakai_hyouka, [["3", 3], ["2", 2], ["1", 1]], {}, class: "form-control"
+          td = f.select :kyouka_rika_hyouka, [["3", 3], ["2", 2], ["1", 1]], {}, class: "form-control"
+          td = f.select :kyouka_seikatu_hyouka, [["3", 3], ["2", 2], ["1", 1]], {}, class: "form-control"
+          td = f.select :kyouka_ongaku_hyouka, [["3", 3], ["2", 2], ["1", 1]], {}, class: "form-control"
+          td = f.select :kyouka_zukou_hyouka, [["3", 3], ["2", 2], ["1", 1]], {}, class: "form-control"
+          td = f.select :kyouka_katei_hyouka, [["3", 3], ["2", 2], ["1", 1]], {}, class: "form-control"
+          td = f.select :kyouka_taiiku_hyouka, [["3", 3], ["2", 2], ["1", 1]], {}, class: "form-control"
+          td = f.select :kyouka_gaikokugo_hyouka, [["3", 3], ["B", 2], ["1", 1]], {}, class: "form-control"
+
+  .card-body
+    h5 特別の教科道徳
+    ul.list-group
+      li.list-group-item
+        = f.text_area :doutoku, class: "form-control"
+  .card-body
+    h5 外国語活動の記録
+    ul.list-group
+      li.list-group-item
+        = f.text_area :gaikokugo_katudou, class: "form-control"
+  
+  .card-body
+    h5 総合的な学習の記録
+    table.table.table-sm
+      thead.text-center
+        tr
+          th[style="width: 15vw"] 学習活動
+          th[style="width: 15vw"] 観点
+          th 評価
+      tbody
+        tr
+          td.text-center
+            = f.text_area :sougou_katudou, class: "form-control"
+          td.text-center
+            = f.text_area :sougou_kanten, class: "form-control"
+          td
+            = f.text_area :sougou_hyouka, class: "form-control"
+  
+  .card-body
+    h5 特別活動の記録
     .row
-      .col
-        .row
-          .col
-            h5.text-right 国語
-          .col
-            .form-group
-              = f.label "知識"
-              = f.select :kyouka_kokugo_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "思考・判断・表現"
-              = f.select :kyouka_kokugo_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "主体的に取り組む態度"
-              = f.select :kyouka_kokugo_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-      .col
-        .row
-          .col
-            h5.text-right 社会
-          .col
-            .form-group
-              = f.label "知識"
-              = f.select :kyouka_syakai_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "思考・判断・表現"
-              = f.select :kyouka_syakai_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "主体的に取り組む態度"
-              = f.select :kyouka_syakai_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-      .col
-        .row
-          .col
-            h5.text-right 算数
-          .col
-            .form-group
-              = f.label "知識"
-              = f.select :kyouka_sansu_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "思考・判断・表現"
-              = f.select :kyouka_sansu_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "主体的に取り組む態度"
-              = f.select :kyouka_sansu_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-      .col
-        .row
-          .col
-            h5.text-right 理科
-          .col
-            .form-group
-              = f.label "知識"
-              = f.select :kyouka_rika_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "思考・判断・表現"
-              = f.select :kyouka_rika_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "主体的に取り組む態度"
-              = f.select :kyouka_rika_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-    .row
-      .col
-        .row
-          .col
-            h5.text-right 国語
-          .col
-            .form-group
-              = f.label "知識"
-              = f.select :kyouka_kokugo_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "思考・判断・表現"
-              = f.select :kyouka_kokugo_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "主体的に取り組む態度"
-              = f.select :kyouka_kokugo_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-    
-      .col
-        .row
-          .col
-            h5.text-right 社会
-          .col
-            .form-group
-              = f.label "知識"
-              = f.select :kyouka_syakai_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "思考・判断・表現"
-              = f.select :kyouka_syakai_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "主体的に取り組む態度"
-              = f.select :kyouka_syakai_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-    
-      .col
-        .row
-          .col
-            h5.text-right 算数
-          .col
-            .form-group
-              = f.label "知識"
-              = f.select :kyouka_sansu_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "思考・判断・表現"
-              = f.select :kyouka_sansu_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "主体的に取り組む態度"
-              = f.select :kyouka_sansu_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-    
-      .col
-        .row
-          .col
-            h5.text-right 理科
-          .col
-            .form-group
-              = f.label "知識"
-              = f.select :kyouka_rika_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "思考・判断・表現"
-              = f.select :kyouka_rika_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-            .form-group
-              = f.label "主体的に取り組む態度"
-              = f.select :kyouka_rika_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+      .col-3.offset-2
+        table.table.table-sm
+          thead.text-center
+            tr
+              th 観点 ＼ 学年
+          tbody.text-center
+            tr
+              td = f.text_area :tokubetu_kanten, class: "form-control"
+      .col-3.offset-2
+        table.table.table-sm
+          thead.text-center
+            tr
+              th[style="width: 10vw"] 内容
+              th
+          tbody.text-center
+            tr
+              th 学級活動
+              td = f.select :tokubetu_gakkyu, [["　", 0], ["○", 1]], {}, class: "form-control"
+            tr
+              th 児童会活動
+              td = f.select :tokubetu_jidoukai, [["　", 0], ["○", 1]], {}, class: "form-control"
+            tr
+              th クラブ活動
+              td = f.select :tokubetu_club, [["　", 0], ["○", 1]], {}, class: "form-control"
+            tr
+              th 学校行事
+              td = f.select :tokubetu_gyouji, [["　", 0], ["○", 1]], {}, class: "form-control"
+  .card-footer
+    = f.submit class: "form-control btn btn-raised btn-primary"
+
+.card.mt-3.mb-3
+  .card-header
+    h4 要録（裏）のデータ
+  
+  .card-body
+    table.table.table-sm
+      thead.text-center
+        tr
+          th 基本的な生活習慣
+          th 健康・体力の向上
+          th 自主・自立
+          th 責任感
+          th 創意工夫
+          th 思いやり・協力
+          th 生命尊重・自然愛護
+          th 勤労・奉仕
+          th 公正・公平
+          th 公共心・公徳心
+      tbody.text-center
+        tr
+          td = f.select :koudou_seikatu, [["　", 0], ["○", 1]], {}, class: "form-control"
+          td = f.select :koudou_kenkou, [["　", 0], ["○", 1]], {}, class: "form-control"
+          td = f.select :koudou_jisyu, [["　", 0], ["○", 1]], {}, class: "form-control"
+          td = f.select :koudou_sekinin, [["　", 0], ["○", 1]], {}, class: "form-control"
+          td = f.select :koudou_soui, [["　", 0], ["○", 1]], {}, class: "form-control"
+          td = f.select :koudou_omoiyari, [["　", 0], ["○", 1]], {}, class: "form-control"
+          td = f.select :koudou_seimei, [["　", 0], ["○", 1]], {}, class: "form-control"
+          td = f.select :koudou_kinrou, [["　", 0], ["○", 1]], {}, class: "form-control"
+          td = f.select :koudou_kousei, [["　", 0], ["○", 1]], {}, class: "form-control"
+          td = f.select :koudou_koukyousin, [["　", 0], ["○", 1]], {}, class: "form-control"
+  
+  .card-body
+    h5 自立活動の記録
+    ul.list-group
+      li.list-group-item
+        = f.text_area :jiritu_katudou, class: "form-control"
+  .card-body
+    h5 総合所見
+    ul.list-group
+      li.list-group-item
+        = f.text_area :syoken, class: "form-control"
+  
+  .card-body
+    h5 出欠の記録
+    table.table.table-sm
+      thead.text-center
+        tr
+          th 授業日数
+          th 出席停止・忌引
+          th 出席しなければならない
+          th 欠席日数
+          th 出席日数
+          th[style="width: 50vw" ] 備考
+      tbody.text-center
+        tr
+          td = f.text_field :jyugyou_nissuu, class: "form-control"
+          td = f.text_field :syusseki_teisi, class: "form-control"
+          td = f.text_field :syusseki_gimu, class: "form-control"
+          td = f.text_field :kesseki, class: "form-control"
+          td = f.text_field :syusseki_nissuu, class: "form-control"
+          td = f.text_area :syusseki_bikou, class: "form-control"
   
   .card-footer
     = f.submit class: "form-control btn btn-raised btn-primary"

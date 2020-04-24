@@ -23,7 +23,7 @@ h1 児童詳細
     h5 各教科の学習の記録
     
     table.table.table-sm
-      thead.text-center
+      thead
         tr
           th
           th 国語
@@ -32,13 +32,13 @@ h1 児童詳細
           th 理科
           th 生活
           th 音楽
-          th 図画工作
+          th 図工
           th 家庭
           th 体育
-          th 外国語
-      tbody.text-center
+          th 英語
+      tbody
         tr
-          th 知識・技能
+          th.text-left 知識・技能
           td = eval_abc(@student.kyouka_kokugo_tishiki)
           td = eval_abc(@student.kyouka_syakai_tishiki)
           td = eval_abc(@student.kyouka_sansu_tishiki)
@@ -50,7 +50,7 @@ h1 児童詳細
           td = eval_abc(@student.kyouka_taiiku_tishiki)
           td = eval_abc(@student.kyouka_gaikokugo_tishiki)
         tr
-          th 思考・判断・表現
+          th.text-left 思考・判断・表現
           td = eval_abc(@student.kyouka_kokugo_shikou)
           td = eval_abc(@student.kyouka_syakai_shikou)
           td = eval_abc(@student.kyouka_sansu_shikou)
@@ -62,7 +62,7 @@ h1 児童詳細
           td = eval_abc(@student.kyouka_taiiku_shikou)
           td = eval_abc(@student.kyouka_gaikokugo_shikou)
         tr
-          th 主体的に取り組む態度
+          th.text-left 主体的に取り組む態度
           td = eval_abc(@student.kyouka_kokugo_syutai)
           td = eval_abc(@student.kyouka_syakai_syutai)
           td = eval_abc(@student.kyouka_sansu_syutai)
@@ -74,7 +74,7 @@ h1 児童詳細
           td = eval_abc(@student.kyouka_taiiku_syutai)
           td = eval_abc(@student.kyouka_gaikokugo_syutai)
         tr
-          th 評価
+          th.text-left 評価
           td = @student.kyouka_kokugo_hyouka
           td = @student.kyouka_syakai_hyouka
           td = @student.kyouka_sansu_hyouka
