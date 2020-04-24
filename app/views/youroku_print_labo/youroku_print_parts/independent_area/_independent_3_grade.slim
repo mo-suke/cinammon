@@ -10,4 +10,4 @@
 .text_box[style="left: 18.5mm; top: 114mm; width: 83.5mm; height: 15mm" class="#{print_display_border?(@print_status)}"]
   - if grade?(@grade, 3)
     p.in_box_text_5pt.in_box_text_padding_1mm
-      = safe_join(student.syoken.split("\n"),tag(:br))
+      = safe_join(student.syoken&.split("\n"),tag(:br)) unless student.syoken.nil?

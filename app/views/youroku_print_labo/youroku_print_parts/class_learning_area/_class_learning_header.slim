@@ -21,4 +21,4 @@
     | 観　点　＼　学　年
 .text_box[style="left: 126.5mm; top: 250mm; width: 35mm; height: 36mm" class="#{print_display_border?(@print_status)}"]
   p.in_box_text_8pt.in_box_text_padding_1mm.text_center[style="line-height: 6mm"]
-    = safe_join(student.tokubetu_kanten.split("\n"),tag(:br))
+    = safe_join(student.tokubetu_kanten&.split("\n"),tag(:br)) unless student.tokubetu_kanten.nil?

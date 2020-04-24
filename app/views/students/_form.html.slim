@@ -57,6 +57,13 @@
             .form-group
               = f.label "知識"
               = f.select :kyouka_syakai_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+            .form-group
+              = f.label "思考・判断・表現"
+              = f.select :kyouka_syakai_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+            .form-group
+              = f.label "主体的に取り組む態度"
+              = f.select :kyouka_syakai_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+  
       .col
         .row
           .col
@@ -65,7 +72,12 @@
             .form-group
               = f.label "知識"
               = f.select :kyouka_sansu_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
-  
+            .form-group
+              = f.label "思考・判断・表現"
+              = f.select :kyouka_sansu_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+            .form-group
+              = f.label "主体的に取り組む態度"
+              = f.select :kyouka_sansu_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
   
   
   .card-footer
