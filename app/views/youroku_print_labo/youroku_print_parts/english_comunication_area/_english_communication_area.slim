@@ -19,11 +19,11 @@
 .text_box[style="left: 114mm; top: 130mm; width: 83.5mm; height: 12mm" class="#{print_display_border?(@print_status)}"]
   - if grade?(@grade, 3)
     p.in_box_text_5pt.in_box_text_padding_1mm
-      |  親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から
+      = safe_join(student.gaikokugo_katudou.split("\n"),tag(:br))
 .text_box[style="left: 107.5mm; top: 142mm; width: 6.5mm; height: 12mm" class="#{print_display_border?(@print_status)}"]
   p.in_box_text_8pt.text_center[style="line-height: 12mm" class="#{print_hide?(@print_status)}"]
     |  4
 .text_box[style="left: 114mm; top: 142mm; width: 83.5mm; height: 12mm" class="#{print_display_border?(@print_status)}"]
   - if grade?(@grade, 4)
     p.in_box_text_5pt.in_box_text_padding_1mm
-      |  親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から
+      = safe_join(student.gaikokugo_katudou.split("\n"),tag(:br))
