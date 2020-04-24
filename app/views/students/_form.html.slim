@@ -1,26 +1,74 @@
-.row
-  .col
-    .form-group
-      = f.label :grade
-      - options = []
-      - (1..6).each { |n| options << %W(#{n}年 #{n}) }
-      = f.select :grade, options, {}, class: "form-control"
+.card
+  .card-body
+    .row
+      .col
+        .form-group
+          = f.label :grade
+          - options = []
+          - (1..6).each { |n| options << %W(#{n}年 #{n}) }
+          = f.select :grade, options, {}, class: "form-control"
+          
+      .col
+        .form-group
+          = f.label :school_class
+          - options = []
+          - (1..3).each { |n| options << %W(#{n}組 #{n}) }
+          = f.select :school_class, options, {}, class: "form-control"
       
-  .col
-    .form-group
-      = f.label :school_class
-      - options = []
-      - (1..3).each { |n| options << %W(#{n}組 #{n}) }
-      = f.select :school_class, options, {}, class: "form-control"
-  
-  .col
-    .form-group
-      = f.label :class_number
-      = f.text_field :class_number, class: "form-control", placeholder: "出席番号"
+      .col
+        .form-group
+          = f.label :class_number
+          = f.text_field :class_number, class: "form-control", placeholder: "出席番号"
 
-.form-group
-  = f.label :name
-  .row
-    .col = f.text_field :last_name, class: "form-control", placeholder: "性"
-    .col = f.text_field :first_name, class: "form-control", placeholder: "名"
-    
+    .form-group
+      = f.label :name
+      .row
+        .col = f.text_field :last_name, class: "form-control", placeholder: "性"
+        .col = f.text_field :first_name, class: "form-control", placeholder: "名"
+  .card-footer
+    = f.submit class: "form-control btn btn-raised btn-primary"
+
+.card.mt-3
+  .card-header
+    h4 要録（表）の入力
+  .card-body
+    h5 各教科の学習の記録
+    .row
+      .col
+        .row
+          .col
+            h5 国語
+          .col
+            .form-group
+              = f.label "知識"
+              = f.select :kyouka_kokugo_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+            .form-group
+              = f.label "思考・判断・表現"
+              = f.select :kyouka_kokugo_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+            .form-group
+              = f.label "主体的に取り組む態度"
+              = f.select :kyouka_kokugo_shikou, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+  
+      .col
+        .row
+          .col
+            h5 社会
+          .col
+            .form-group
+              = f.label "知識"
+              = f.select :kyouka_syakai_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+      .col
+        .row
+          .col
+            h5 算数
+          .col
+            .form-group
+              = f.label "知識"
+              = f.select :kyouka_sansu_tishiki, [["A", 3], ["B", 2], ["C", 1]], {}, class: "form-control"
+  
+  
+  
+  .card-footer
+    = f.submit class: "form-control btn btn-raised btn-primary"
+
+        

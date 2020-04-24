@@ -8,8 +8,214 @@ h1 児童詳細
     h2 = "#{@student.grade}年 #{@student.school_class}組 #{@student.class_number}番"
     h1 = "#{@student.last_name} #{@student.first_name}"
     
+  .card-footer
     .text-right
       = link_to [:edit, @student] do
         button.btn.btn-success.btn-raised 編集
       = link_to @student, method: :delete, data: {confirm: "本当に削除しますか？"} do
         button.btn.btn-danger.btn-raised.ml-1 削除
+        
+.card.mt-3
+  .card-header
+    h4 要録(表）のデータ
+    
+  .card-body
+    h5 各教科の学習の記録
+    
+    table.table.table-sm
+      thead.text-center
+        tr
+          th
+          th 国語
+          th 社会
+          th 算数
+          th 理科
+          th 生活
+          th 音楽
+          th 図画工作
+          th 家庭
+          th 体育
+          th 外国語
+      tbody.text-center
+        tr
+          th 知識・技能
+          td = eval_abc(@student.kyouka_kokugo_tishiki)
+          td = eval_abc(@student.kyouka_syakai_tishiki)
+          td = eval_abc(@student.kyouka_sansu_tishiki)
+          td = eval_abc(@student.kyouka_rika_tishiki)
+          td = eval_abc(@student.kyouka_seikatu_tishiki)
+          td = eval_abc(@student.kyouka_ongaku_tishiki)
+          td = eval_abc(@student.kyouka_zukou_tishiki)
+          td = eval_abc(@student.kyouka_katei_tishiki)
+          td = eval_abc(@student.kyouka_taiiku_tishiki)
+          td = eval_abc(@student.kyouka_gaikokugo_tishiki)
+        tr
+          th 思考・判断・表現
+          td = eval_abc(@student.kyouka_kokugo_shikou)
+          td = eval_abc(@student.kyouka_syakai_shikou)
+          td = eval_abc(@student.kyouka_sansu_shikou)
+          td = eval_abc(@student.kyouka_rika_shikou)
+          td = eval_abc(@student.kyouka_seikatu_shikou)
+          td = eval_abc(@student.kyouka_ongaku_shikou)
+          td = eval_abc(@student.kyouka_zukou_shikou)
+          td = eval_abc(@student.kyouka_katei_shikou)
+          td = eval_abc(@student.kyouka_taiiku_shikou)
+          td = eval_abc(@student.kyouka_gaikokugo_shikou)
+        tr
+          th 主体的に取り組む態度
+          td = eval_abc(@student.kyouka_kokugo_syutai)
+          td = eval_abc(@student.kyouka_syakai_syutai)
+          td = eval_abc(@student.kyouka_sansu_syutai)
+          td = eval_abc(@student.kyouka_rika_syutai)
+          td = eval_abc(@student.kyouka_seikatu_syutai)
+          td = eval_abc(@student.kyouka_ongaku_syutai)
+          td = eval_abc(@student.kyouka_zukou_syutai)
+          td = eval_abc(@student.kyouka_katei_syutai)
+          td = eval_abc(@student.kyouka_taiiku_syutai)
+          td = eval_abc(@student.kyouka_gaikokugo_syutai)
+        tr
+          th 評価
+          td = @student.kyouka_kokugo_hyouka
+          td = @student.kyouka_syakai_hyouka
+          td = @student.kyouka_sansu_hyouka
+          td = @student.kyouka_rika_hyouka
+          td = @student.kyouka_seikatu_hyouka
+          td = @student.kyouka_ongaku_hyouka
+          td = @student.kyouka_zukou_hyouka
+          td = @student.kyouka_katei_hyouka
+          td = @student.kyouka_taiiku_hyouka
+          td = @student.kyouka_gaikokugo_hyouka
+
+  .card-body
+    h5 特別の教科道徳
+    ul.list-group
+      li.list-group-item
+        = @student.doutoku == "" ? "記入なし" : safe_join(@student.doutoku.split("\n"),tag(:br))
+  .card-body
+    h5 外国語活動の記録
+    ul.list-group
+      - if @student.grade == 3 || @student.grade == 4
+        li.list-group-item = @student.gaikokugo_katudou != "" ? @student.gaikokugo_katudou : "記入なし"
+      - else
+        li.list-group-item.disabled 3，4年のみの項目
+      
+  .card-body
+    h5 総合的な学習の記録
+    table.table.table-sm
+      thead.text-center
+        tr
+          th[style="width: 15vw"] 学習活動
+          th[style="width: 15vw"] 観点
+          th 評価
+      tbody
+        tr
+          td.text-center
+            = @student.sougou_katudou != "" ? safe_join(@student.sougou_katudou.split("\n"),tag(:br)) : "記入なし"
+          td.text-center
+            = @student.sougou_kanten != "" ? safe_join(@student.sougou_kanten.split("\n"),tag(:br)) : "記入なし"
+          td
+            = @student.sougou_hyouka != "" ? safe_join(@student.sougou_hyouka.split("\n"),tag(:br)) : "記入なし"
+          
+  .card-body
+    h5 特別活動の記録
+    .row
+      .col-3.offset-2
+        table.table.table-sm
+          thead.text-center
+            tr
+              th 観点 ＼ 学年
+          tbody.text-center
+            tr
+              td = @student.tokubetu_kanten != "" ? safe_join(@student.tokubetu_kanten.split("\n"),tag(:br)) : "記入なし"
+      .col-3.offset-2
+        table.table.table-sm
+          thead.text-center
+            tr
+              th[style="width: 10vw"] 内容
+              th
+          tbody.text-center
+            tr
+              th 学級活動
+              td = eval_circle(@student.tokubetu_gakkyu)
+            tr
+              th 児童会活動
+              td = eval_circle(@student.tokubetu_jidoukai)
+            tr
+              th クラブ活動
+              td = eval_circle(@student.tokubetu_club)
+            tr
+              th 学校行事
+              td = eval_circle(@student.tokubetu_gyouji)
+  .card-footer
+    .text-right
+      = link_to [:edit, @student] do
+        button.btn.btn-success.btn-raised 編集
+
+.card.mt-3.mb-3
+  .card-header
+    h4 要録（裏）のデータ
+  
+  .card-body
+    table.table.table-sm
+      thead.text-center
+        tr
+          th 基本的な生活習慣
+          th 健康・体力の向上
+          th 自主・自立
+          th 責任感
+          th 創意工夫
+          th 思いやり・協力
+          th 生命尊重・自然愛護
+          th 勤労・奉仕
+          th 公正・公平
+          th 公共心・公徳心
+      tbody.text-center
+        tr
+          td = eval_circle(@student.koudou_seikatu)
+          td = eval_circle(@student.koudou_kenkou)
+          td = eval_circle(@student.koudou_jisyu)
+          td = eval_circle(@student.koudou_sekinin)
+          td = eval_circle(@student.koudou_soui)
+          td = eval_circle(@student.koudou_omoiyari)
+          td = eval_circle(@student.koudou_seimei)
+          td = eval_circle(@student.koudou_kinrou)
+          td = eval_circle(@student.koudou_kousei)
+          td = eval_circle(@student.koudou_koukyousin)
+  
+  .card-body
+    h5 自立活動の記録
+    ul.list-group
+      li.list-group-item
+        = @student.jiritu_katudou != "" ? safe_join(@student.jiritu_katudou.split("\n"),tag(:br)) : "記入なし"
+        
+  .card-body
+    h5 総合所見
+    ul.list-group
+      li.list-group-item
+        = @student.syoken != "" ? safe_join(@student.syoken.split("\n"),tag(:br)) : "記入なし"
+  
+  
+  .card-body
+    h5 出欠の記録
+    table.table.table-sm
+      thead.text-center
+        tr
+          th 授業日数
+          th 出席停止・忌引
+          th 出席しなければならない
+          th 欠席日数
+          th 出席日数
+          th[style="width: 50vw" ] 備考
+      tbody.text-center
+        tr
+          td = @student.jyugyou_nissuu
+          td = @student.syusseki_teisi
+          td = @student.syusseki_gimu
+          td = @student.kesseki
+          td = @student.syusseki_nissuu
+          td.text-left = @student.syusseki_bikou != "" ? safe_join(@student.syusseki_bikou.split("\n"),tag(:br)) : "記入なし"
+  
+  .card-footer
+    .text-right
+      = link_to [:edit, @student] do
+        button.btn.btn-success.btn-raised 編集

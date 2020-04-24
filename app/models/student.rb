@@ -99,7 +99,8 @@ class Student < ApplicationRecord
 
     # URLでindexにcsvが指定されたとき，モデルオブジェクトをcsvにして返す
     def generate_csv
-      CSV.generate(headers: :true) do |csv|
+      bom = %w(EF BB BF).map { |e| e.hex.chr }.join
+      CSV.generate(bom, headers: :true) do |csv|
         csv << csv_attributes
         all.each do |cont|
           csv << csv_attributes.map{|attr| cont.send(attr)}
