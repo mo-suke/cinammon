@@ -57,7 +57,11 @@ class StudentsController < ApplicationController
 
   # csvからのインポート
   def import
-    Student.import(params[:file])
-    redirect_to students_url
+    if params[:file]&.path.nil?
+      redirect_to :students, notice: "ファイルが選択されていません"
+    else
+      Student.import(params[:file])
+      redirect_to :students, notice: "インポートを完了しました"
+    end
   end
 end

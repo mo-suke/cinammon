@@ -7,12 +7,12 @@
       
 .row
   .col-8
-      = form_tag import_students_path, multipart: true do
-        .row
-          .col
-            = file_field_tag :file, class:"form-control-file"
-          .col
-            = submit_tag "インポート", class:"form-control btn btn-light text-dark btn-raised"
+    = form_tag import_students_path, multipart: true do
+      .row
+        .col
+          = file_field_tag :file, class:"form-control-file"
+        .col
+          = submit_tag "インポート", class:"form-control btn btn-light text-dark btn-raised"
   .col
     = link_to students_path(format: :csv) do
       button.btn.btn-primary CSVをエクスポート
