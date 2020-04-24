@@ -100,7 +100,7 @@ class Student < ApplicationRecord
     # URLでindexにcsvが指定されたとき，モデルオブジェクトをcsvにして返す
     def generate_csv
       bom = %w(EF BB BF).map { |e| e.hex.chr }.join
-      CSV.generate(bom, headers: :true) do |csv|
+      CSV.generate(bom, headers: true, encoding: "UTF-8:UTF-8") do |csv|
         csv << csv_attributes
         all.each do |cont|
           csv << csv_attributes.map{|attr| cont.send(attr)}
@@ -110,12 +110,13 @@ class Student < ApplicationRecord
 
     # csvのインポート
     def import(file)
-      CSV.foreach(file&.path, headers: :true) do |row|
+      CSV.foreach(file.path, headers: true, encoding: "UTF-8:UTF-8") do |row|
         # IDが見つかれば，レコードを呼び出し，見つからなければ，新しく作成
-        student = find_by(id: row[:id]) || new
+        student = find_by(id: row[0]) || new
         # CSVからデータを取得して，設定
         student.attributes = row.to_hash.slice(*csv_attributes)
         # 保存
+        student.save
       end
     end
   end

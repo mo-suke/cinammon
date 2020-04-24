@@ -90,12 +90,12 @@ h1 児童詳細
     h5 特別の教科道徳
     ul.list-group
       li.list-group-item
-        = @student.doutoku == "" ? "記入なし" : safe_join(@student.doutoku.split("\n"),tag(:br))
+        = @student.doutoku == "" || @student&.doutoku.nil? ? "記入なし" : safe_join(@student.doutoku&.split("\n"),tag(:br))
   .card-body
     h5 外国語活動の記録
     ul.list-group
       - if @student.grade == 3 || @student.grade == 4
-        li.list-group-item = @student.gaikokugo_katudou != "" ? @student.gaikokugo_katudou : "記入なし"
+        li.list-group-item = @student.gaikokugo_katudou == "" || @student&.gaikokugo_katudou.nil? ? "記入なし" : @student.gaikokugo_katudou
       - else
         li.list-group-item.disabled 3，4年のみの項目
       
@@ -110,11 +110,11 @@ h1 児童詳細
       tbody
         tr
           td.text-center
-            = @student.sougou_katudou != "" ? safe_join(@student.sougou_katudou.split("\n"),tag(:br)) : "記入なし"
+            = @student.sougou_katudou == "" || @student&.sougou_katudou.nil? ? "記入なし" : safe_join(@student.sougou_katudou&.split("\n"),tag(:br))
           td.text-center
-            = @student.sougou_kanten != "" ? safe_join(@student.sougou_kanten.split("\n"),tag(:br)) : "記入なし"
+            = @student.sougou_kanten == "" || @student&.sougou_kanten.nil? ? "記入なし" : safe_join(@student.sougou_kanten&.split("\n"),tag(:br))
           td
-            = @student.sougou_hyouka != "" ? safe_join(@student.sougou_hyouka.split("\n"),tag(:br)) : "記入なし"
+            = @student.sougou_hyouka == "" || @student&.sougou_hyouka.nil? ? "記入なし" : safe_join(@student.sougou_hyouka&.split("\n"),tag(:br))
           
   .card-body
     h5 特別活動の記録
@@ -126,7 +126,7 @@ h1 児童詳細
               th 観点 ＼ 学年
           tbody.text-center
             tr
-              td = @student.tokubetu_kanten != "" ? safe_join(@student.tokubetu_kanten.split("\n"),tag(:br)) : "記入なし"
+              td = @student.tokubetu_kanten == "" || @student&.tokubetu_kanten.nil? ? "記入なし" : safe_join(@student.tokubetu_kanten&.split("\n"),tag(:br))
       .col-3.offset-2
         table.table.table-sm
           thead.text-center
@@ -186,13 +186,13 @@ h1 児童詳細
     h5 自立活動の記録
     ul.list-group
       li.list-group-item
-        = @student.jiritu_katudou != "" ? safe_join(@student.jiritu_katudou.split("\n"),tag(:br)) : "記入なし"
+        = @student.jiritu_katudou != "" || @student&.jiritu_katudou.nil? ? "記入なし" : safe_join(@student.jiritu_katudou&.split("\n"),tag(:br))
         
   .card-body
     h5 総合所見
     ul.list-group
       li.list-group-item
-        = @student.syoken != "" ? safe_join(@student.syoken.split("\n"),tag(:br)) : "記入なし"
+        = @student.syoken == "" || @student&.syoken.nil? ? "記入なし" : safe_join(@student.syoken&.split("\n"),tag(:br))
   
   
   .card-body
@@ -213,7 +213,7 @@ h1 児童詳細
           td = @student.syusseki_gimu
           td = @student.kesseki
           td = @student.syusseki_nissuu
-          td.text-left = @student.syusseki_bikou != "" ? safe_join(@student.syusseki_bikou.split("\n"),tag(:br)) : "記入なし"
+          td.text-left = @student.syusseki_bikou == "" || @student&.syusseki_bikou.nil? ? "記入なし" : safe_join(@student.syusseki_bikou&.split("\n"),tag(:br))
   
   .card-footer
     .text-right
