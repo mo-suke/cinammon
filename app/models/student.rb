@@ -110,7 +110,8 @@ class Student < ApplicationRecord
 
     # csvのインポート
     def import(file)
-      CSV.foreach(file.path, headers: true) do |row|
+      csv = file.path.encode!('UTF-8', 'UTF-8', :invalid => :replace)
+      CSV.foreach(csv, headers: true) do |row|
         # IDが見つかれば，レコードを呼び出し，見つからなければ，新しく作成
         student = find_by(id: row[0]) || new
         # CSVからデータを取得して，設定
