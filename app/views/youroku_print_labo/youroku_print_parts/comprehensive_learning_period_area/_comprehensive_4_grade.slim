@@ -11,5 +11,5 @@
       = safe_join(student.sougou_kanten&.split("\n"),tag(:br)) unless student.sougou_kanten.nil?
 .text_box[style="left: 163mm; top: 184mm; width: 34.5mm; height: 18mm" class="#{print_display_border?(@print_status)}"]
   - if grade?(@grade, 4)
-    p.in_box_text_5pt.in_box_text_padding_1mm
+    p.in_box_text_8pt.in_box_text_padding_1mm
       = safe_join(student.sougou_hyouka&.split("\n"),tag(:br)) unless student.sougou_hyouka.nil?
