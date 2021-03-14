@@ -20,6 +20,19 @@ module ApplicationHelper
     end
   end
 
+  def eval_123(num)
+    case num
+    when 3
+      "3"
+    when 2
+      "2"
+    when 1
+      "1"
+    when 0
+      ""
+    end
+  end
+
   def print_hide?(print_status)
     print_status == "hide" ? "print_hide" : ""
   end
