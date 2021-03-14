@@ -48,7 +48,18 @@
       option[value="display" selected] 罫線あり
     - else
       option[value="display"] 罫線あり
-
+      
+  select#name_status
+    - if params[:name_status] == "hide"
+      option[value="hide" selected] 児童情報なし
+    - else
+      option[value="hide"] 児童情報なし
+  
+    - if params[:name_status] == "display"
+      option[value="display" selected] 児童情報あり
+    - else
+      option[value="display"] 児童情報あり
+  
   input[type="button" value="表示" onclick="select_format()"]
   
 a.print_hide[href="/"]
@@ -60,5 +71,6 @@ javascript:
     const school_class = document.getElementById("school_class").value;
     const status = document.getElementById("status").value;
     const print_status = document.getElementById("print_status").value;
-    window.location.href = `/youroku_print_labo/show/${grade}/${school_class}/${status}/${print_status}`;
+    const name_status = document.getElementById("name_status").value;
+    window.location.href = `/youroku_print_labo/show/${grade}/${school_class}/${status}/${print_status}/${name_status}`;
   }

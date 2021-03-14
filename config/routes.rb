@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   get 'laboratory/bootstrap'
   get 'laboratory/print'
 
-  get 'youroku_print_labo/show/:grade/:school_class/:status/:print_status' => 'youroku_print_labo#show'
+  get 'youroku_print_labo/show/:grade/:school_class/:status/:print_status/:name_status' => 'youroku_print_labo#show'
 end

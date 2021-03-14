@@ -2,5 +2,5 @@
   p.in_box_text_8pt.text_center[style="line-height: 5mm" class="#{print_hide?(@print_status)}"]
     |  児　童　氏　名
 .text_box[style="left: 17.5mm; top: 21mm; width: 40mm; height: 10mm" class="#{print_display_border?(@print_status)}"]
-  p.in_box_text_8pt.text_center[style="line-height: 10mm"]
+  p.in_box_text_8pt.text_center[style="line-height: 10mm" class="#{name_hide?(@name_status)}"]
     = "#{student.last_name} #{student.first_name}"

@@ -37,6 +37,10 @@ module ApplicationHelper
     print_status == "hide" ? "print_hide" : ""
   end
 
+  def name_hide?(name_status)
+    name_status == "hide" ? "name_hide" : ""
+  end
+
   def print_display_border?(print_status)
     print_status == "display" ? "print_display_border" : ""
   end
