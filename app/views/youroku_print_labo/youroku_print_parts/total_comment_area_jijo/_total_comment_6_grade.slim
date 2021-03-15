@@ -10,5 +10,5 @@
 
 .text_box[style="left: 108.5mm; top: 189mm; width: 83.5mm; height: 27mm" class="#{print_display_border?(@print_status)}"]
   - if grade?(@grade, 6)
-    p.in_box_text_5pt.in_box_text_padding_1mm
+    p.in_box_text_7pt.in_box_text_padding_1mm
       = safe_join(student.syoken&.split("\n"),tag(:br)) unless student.syoken.nil?
