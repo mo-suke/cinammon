@@ -3,11 +3,11 @@
     |  3
 .text_box[style="left: 114mm; top: 166mm; width: 24.5mm; height: 18mm" class="#{print_display_border?(@print_status)}"]
   - if grade?(@grade, 3)
-    p.in_box_text_7pt.in_box_text_padding_1mm[style="line-height: 9mm"]
+    p.in_box_text_7pt.in_box_text_padding_1mm
       = safe_join(student.sougou_katudou&.split("\n"),tag(:br)) unless student.sougou_katudou.nil?
 .text_box[style="left: 138.5mm; top: 166mm; width: 24.5mm; height: 18mm" class="#{print_display_border?(@print_status)}"]
   - if grade?(@grade, 3)
-    p.in_box_text_7pt.in_box_text_padding_1mm[style="line-height: 9mm"]
+    p.in_box_text_7pt.in_box_text_padding_1mm
       = safe_join(student.sougou_kanten&.split("\n"),tag(:br)) unless student.sougou_kanten.nil?
 .text_box[style="left: 163mm; top: 166mm; width: 34.5mm; height: 18mm" class="#{print_display_border?(@print_status)}"]
   - if grade?(@grade, 3)
